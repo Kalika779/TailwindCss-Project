@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front End Intern Assignment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script> <!-- Adding Anime.js library -->
+    <style>
+        /* Custom CSS for the diagonal background */
+        .diagonal-background {
+            background: linear-gradient(135deg, #4a148c 50%, #ffffff 50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div id="assignment" class="diagonal-background p-10 w-full max-w-6xl shadow-lg rounded-lg">
+        <h1 class="text-2xl font-bold mb-6 text-white">OUR SERVICES</h1>
+        <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-1 gap-6">
+            <!-- Service Card 1 -->
+            <div class="service-card relative bg-white p-6 text-center rounded-lg shadow-lg transform transition-transform hover:rotate-360">
+                <div class="icon mb-4 text-purple-700">
+                     <img class="w-20 h-20 object-contain mx-auto rounded-full" src="https://c8.alamy.com/comp/2F3PPKN/wifi-symbol-in-front-of-smartphone-3d-three-dimentional-and-warning-sign-public-connection-for-wifi-connection-concept-vector-illustration-2F3PPKN.jpg" alt="">
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Emergency Plumbing Services</h3>
+                <p class="text-gray-600 mb-4">Our plumbers are ready to go 24/7 for emergencies - including nights, weekends, and holidays.</p>
+                <a href="#" class="text-purple-700 font-semibold hover:underline">Explore This Service</a>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card relative bg-white p-6 text-center rounded-lg shadow-lg transform transition-transform hover:rotate-360">
+                <div class="icon mb-4 text-purple-700">
+                    <img class="w-20 h-20 object-contain mx-auto rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSja9srncdEvy2cicYffwGV7KhyG_d0E8E0Wg&s" alt="">
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Plumbing and Drains</h3>
+                <p class="text-gray-600 mb-4">As the largest plumbing and drain service company, we make thousands of repairs every day.</p>
+                <a href="#" class="text-purple-700 font-semibold hover:underline">Explore This Service</a>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card relative bg-white p-6 text-center rounded-lg shadow-lg transform transition-transform hover:rotate-360">
+                <div class="icon mb-4 text-purple-700 flex items-center justify-center">
+                    <img class="w-20 h-20 object-contain mx-auto rounded-full mt-[0px]" src="https://static.vecteezy.com/system/resources/thumbnails/019/541/020/small/water-droplets-illustration-on-isolated-background-vector.jpg" alt="">
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Water Damage</h3>
+                <p class="text-gray-600 mb-4">Our teams are equipped with state-of-the-art water extraction and cleanup equipment.</p>
+                <a href="#" class="text-purple-700 font-semibold hover:underline">Explore This Service</a>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="service-card relative bg-white p-6 text-center rounded-lg shadow-lg transform transition-transform hover:rotate-360">
+                <div class="icon mb-4 text-purple-700">
+                    <img class="w-20 h-20 object-contain mx-auto rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSECeASpwWQDGwVgiE1MD2sWFVpuGM4s9pR5Q&s" alt="">
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Water Heaters</h3>
+                <p class="text-gray-600 mb-4">Trust us for repair and replacement of gas, electric, and tankless water heaters.</p>
+                <a href="#" class="text-purple-700 font-semibold hover:underline">Explore This Service</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript code to add rotation effect using Anime.js
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                anime({
+                    targets: card,
+                    rotate: '1turn', 
+                    duration: 1000, 
+                    easing: 'easeInOutSine',
+                    complete: () => {
+                        anime.set(card, { rotate: 0 });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
